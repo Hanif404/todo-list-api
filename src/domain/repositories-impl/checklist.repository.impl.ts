@@ -24,7 +24,7 @@ export class ChecklistRepository implements IChecklistRepository {
     return await prisma.checklist.create({ data: checklistData });
   }
 
-  async delete(id: number): Promise<null> {
+  async delete(id: number): Promise<Checklist> {
     return await prisma.checklist.delete({ where: { id } });
   }
 }
